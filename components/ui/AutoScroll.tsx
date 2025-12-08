@@ -11,7 +11,7 @@ interface AutoScrollProps {
 export function AutoScroll({ children, className = '', speed = 30 }: AutoScrollProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
