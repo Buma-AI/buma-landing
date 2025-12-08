@@ -11,7 +11,7 @@ interface ContinuousScrollProps {
 export function ContinuousScroll({ children, className = '', speed = 50 }: ContinuousScrollProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
   const scrollPositionRef = useRef(0);
 
   useEffect(() => {
