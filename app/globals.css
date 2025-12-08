@@ -1,26 +1,180 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* BumaAI Colors */
+  --buma-orange: #FF6B35;
+  --buma-orange-dark: #E55A2B;
+  --buma-orange-light: #FF8C5A;
+  
+  /* Semantic Colors */
+  --success: #10B981;
+  --error: #EF4444;
+  --warning: #F59E0B;
+  --info: #3B82F6;
+  
+  /* Text Colors */
+  --text-primary: #2C3E50;
+  --text-secondary: #6B7280;
+  --text-tertiary: #9CA3AF;
+  
+  /* Background */
+  --bg-white: #FFFFFF;
+  --bg-light: #F5F5F5;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-color: white;
+    color: #2C3E50;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Text color utilities */
+  .text-text-primary {
+    color: #1F2937;
+  }
+  
+  .text-text-secondary {
+    color: #4B5563;
+  }
+  
+  .text-text-tertiary {
+    color: #6B7280;
+  }
+  
+  /* Orange background - Force display */
+  .bg-primary-600-solid {
+    background-color: #E55A2B !important;
+  }
+  
+  .bg-primary-gradient {
+    background: linear-gradient(135deg, #E55A2B 0%, #CC4A21 50%, #B33A17 100%) !important;
+  }
+  
+  .text-green-force {
+    color: #10B981 !important;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section transitions and background effects */
+.section-transition {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-transition::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.2), transparent);
+  z-index: 1;
+}
+
+/* Subtle orange shadow in white sections */
+.white-section-bg {
+  position: relative;
+  background: white;
+}
+
+.white-section-bg::after {
+  content: '';
+  position: absolute;
+  top: -200px;
+  left: 0;
+  right: 0;
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Grid pattern overlay - Enhanced for white sections */
+.grid-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255, 107, 53, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 107, 53, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Grid pattern for orange sections (white grid on orange) */
+.grid-pattern-orange {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Neumorphism card style with subtle gray shadow */
+.neumorphism-card {
+  background: #FFFFFF;
+  border: none;
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.12),
+    -8px -8px 16px rgba(255, 255, 255, 0.8),
+    0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.neumorphism-card-hover {
+  box-shadow: 
+    12px 12px 24px rgba(255, 107, 53, 0.15),
+    -8px -8px 16px rgba(255, 255, 255, 0.8),
+    0 0 0 1px rgba(255, 107, 53, 0.1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--buma-orange);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--buma-orange-dark);
+}
+
+/* Hide scrollbar for horizontal scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
