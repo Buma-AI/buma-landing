@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+:root {
+  /* BumaAI Colors - Professional palette */
+  --buma-orange: #D04A1B;
+  --buma-orange-dark: #B83A0F;
+  --buma-orange-light: #E67E5A;
+  --buma-orange-pale: #F5E6E0;
+  
+  /* Semantic Colors */
+  --success: #10B981;
+  --error: #EF4444;
+  --warning: #F59E0B;
+  --info: #3B82F6;
+  
+  /* Text Colors */
+  --text-primary: #2C3E50;
+  --text-secondary: #6B7280;
+  --text-tertiary: #9CA3AF;
+  
+  /* Background */
+  --bg-white: #FFFFFF;
+  --bg-light: #F5F5F5;
+}
+
+@layer base {
+  body {
+    background-color: white;
+    color: #2C3E50;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Text color utilities */
+  .text-text-primary {
+    color: #1F2937;
+  }
+  
+  .text-text-secondary {
+    color: #4B5563;
+  }
+  
+  .text-text-tertiary {
+    color: #6B7280;
+  }
+  
+  /* Orange background - Force display */
+  .bg-primary-600-solid {
+    background-color: #D04A1B !important;
+  }
+  
+  .bg-primary-gradient {
+    background: linear-gradient(135deg, #D04A1B 0%, #B83A0F 50%, #9F2A0A 100%) !important;
+  }
+  
+  .text-green-force {
+    color: #10B981 !important;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section transitions and background effects */
+.section-transition {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-transition::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(208, 74, 27, 0.15) 20%, 
+    rgba(208, 74, 27, 0.3) 50%, 
+    rgba(208, 74, 27, 0.15) 80%, 
+    transparent 100%);
+  z-index: 1;
+  box-shadow: 0 1px 3px rgba(208, 74, 27, 0.1);
+}
+
+/* Enhanced section separator - visible divider */
+.section-separator {
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(0, 0, 0, 0.08) 10%, 
+    rgba(0, 0, 0, 0.15) 50%, 
+    rgba(0, 0, 0, 0.08) 90%, 
+    transparent 100%);
+  margin: 0 auto;
+  max-width: 1200px;
+  position: relative;
+}
+
+.section-separator::before {
+  content: '';
+  position: absolute;
+  top: -0.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: rgba(208, 74, 27, 0.4);
+  border-radius: 2px;
+}
+
+/* Subtle orange shadow in white sections */
+.white-section-bg {
+  position: relative;
+  background: white;
+}
+
+.white-section-bg::after {
+  content: '';
+  position: absolute;
+  top: -200px;
+  left: 0;
+  right: 0;
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgba(208, 74, 27, 0.10) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Grid pattern overlay - Enhanced for white sections */
+.grid-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(208, 74, 27, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(208, 74, 27, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Grid pattern for orange sections (white grid on orange) */
+.grid-pattern-orange {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Neumorphism card style with subtle gray shadow */
+.neumorphism-card {
+  background: #FFFFFF;
+  border: none;
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.12),
+    -8px -8px 16px rgba(255, 255, 255, 0.8),
+    0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.neumorphism-card-hover {
+  box-shadow: 
+    12px 12px 24px rgba(208, 74, 27, 0.12),
+    -8px -8px 16px rgba(255, 255, 255, 0.8),
+    0 0 0 1px rgba(208, 74, 27, 0.08);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--buma-orange);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--buma-orange-dark);
+}
+
+/* Hide scrollbar for horizontal scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
