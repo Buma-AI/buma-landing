@@ -5,13 +5,21 @@ import { Rocket } from 'lucide-react';
 function Footer() {
   return (
     <footer 
-      className="text-white py-16 relative overflow-hidden bg-primary-gradient"
-      style={{
-        background: 'linear-gradient(135deg, #E55A2B 0%, #CC4A21 50%, #B33A17 100%)', // primary-600 to primary-800 - fallback
-      }}
+      className="text-white py-16 relative"
     >
+      {/* Solid orange background with radial gradients - same style as Header */}
+      <div 
+        className="absolute inset-0 bg-primary-600-solid shadow-lg"
+        style={{
+          backgroundColor: '#D04A1B', // Same as Hero/CTA section
+        }}
+      >
+        {/* Radial gradient overlays - same as CTA section */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.15),transparent_70%)]" />
+      </div>
+      
       {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
       </div>

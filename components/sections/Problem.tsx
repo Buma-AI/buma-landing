@@ -22,18 +22,18 @@ const problems = [
     icon: Smartphone,
     title: 'Il passe des heures sur son téléphone.',
     description: 'Du temps perdu au lieu d\'apprendre.',
-    color: '#3B82F6', // Blue
-    gradient: ['#3B82F6', '#2563EB'],
+    color: '#2563EB', // Bleu professionnel
+    gradient: ['#2563EB', '#1D4ED8'],
   },
 ];
 
 function Problem() {
   return (
     <section className="section-transition white-section-bg py-16 bg-white relative">
-      {/* Moderate orange shadow background */}
+      {/* Subtle gray shadow background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/6 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-primary-500/6 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gray-500/6 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gray-500/6 rounded-full blur-3xl" />
       </div>
       
       {/* Grid pattern */}
@@ -78,13 +78,13 @@ function Problem() {
                 >
                   <div className="flex flex-col items-center text-center space-y-4">
                     <div 
-                      className="w-20 h-20 rounded-xl flex items-center justify-center"
-                      style={{
-                        background: `linear-gradient(135deg, ${problem.gradient[0]} 0%, ${problem.gradient[1]} 100%)`,
-                        boxShadow: `0 10px 20px ${problem.color}40`,
-                      }}
+                      className="flex items-center justify-center"
                     >
-                      <Icon className="w-10 h-10 text-white" strokeWidth={2.5} />
+                      <Icon 
+                        className="w-12 h-12" 
+                        style={{ color: problem.color }}
+                        strokeWidth={3}
+                      />
                     </div>
                     <h3 className="text-xl lg:text-2xl font-black text-text-primary leading-tight">
                       {problem.title}

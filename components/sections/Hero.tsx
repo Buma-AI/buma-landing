@@ -6,6 +6,7 @@ import { Rocket } from 'lucide-react';
 import { useState, FormEvent } from 'react';
 
 function Hero() {
+  const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -16,10 +17,11 @@ function Hero() {
     // TODO: Connecter à votre service d'email
     try {
       await new Promise(resolve => setTimeout(resolve, 1000));
-      console.log('Email submitted:', email);
+      console.log('Form submitted:', { firstName, email });
+      setFirstName('');
       setEmail('');
     } catch (error) {
-      console.error('Error submitting email:', error);
+      console.error('Error submitting form:', error);
     } finally {
       setIsSubmitting(false);
     }
@@ -30,7 +32,7 @@ function Hero() {
       id="hero" 
       className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-16 pb-12 bg-primary-600-solid"
       style={{
-        backgroundColor: '#E55A2B', // primary-600 - fallback
+        backgroundColor: '#D04A1B', // primary-600 - fallback (orange professionnel)
       }}
     >
       {/* Transition gradient at bottom */}
@@ -39,7 +41,7 @@ function Hero() {
       <div 
         className="absolute inset-0 bg-primary-600-solid"
         style={{
-          backgroundColor: '#E55A2B', // primary-600 - fallback
+          backgroundColor: '#D04A1B', // primary-600 - fallback (orange professionnel)
         }}
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent_50%)]" />
@@ -73,7 +75,7 @@ function Hero() {
               Le professeur particulier{' '}
               <span style={{ color: '#FFF5F2' }}>de votre enfant</span>
               <br />
-              <span className="text-green-force" style={{ color: '#10B981' }}>disponible 24/7</span>
+              <span className="text-green-force" style={{ color: '#059669' }}>disponible 24/7</span>
             </h1>
           </motion.div>
 
@@ -85,33 +87,24 @@ function Hero() {
             className="relative flex items-start justify-center mb-6"
           >
             <div className="relative">
-              {/* Landing page image - Original size, no border */}
-              <div className="relative rounded-2xl overflow-hidden">
+              {/* Landing page image - Original size, responsive */}
+              <div className="relative rounded-2xl overflow-hidden w-full flex justify-center">
                 <Image
                   src="/landing.png"
                   alt="BumaAI App Interface - Profil, Chat et Social"
                   width={800}
                   height={1600}
-                  className="w-full h-auto rounded-2xl max-w-md mx-auto"
+                  className="rounded-2xl"
                   style={{
-                    maxWidth: '400px',
                     width: 'auto',
                     height: 'auto',
+                    maxWidth: 'min(800px, 100%)',
+                    objectFit: 'contain',
                   }}
                   priority
                   quality={100}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px"
                 />
-              </div>
-
-              {/* Floating stats */}
-              <div className="absolute -top-3 -right-3 bg-white rounded-lg shadow-xl p-3 border-2 border-primary-200 z-10">
-                <div className="text-xl font-bold text-primary-600">14.5k</div>
-                <div className="text-xs text-text-secondary font-medium">XP gagnés</div>
-              </div>
-
-              <div className="absolute -bottom-3 -left-3 bg-white rounded-lg shadow-xl p-3 border-2 border-primary-200 z-10">
-                <div className="text-xl font-bold text-primary-600">247</div>
-                <div className="text-xs text-text-secondary font-medium">Exercices</div>
               </div>
             </div>
           </motion.div>
@@ -193,6 +186,19 @@ function Hero() {
             {/* Simple form */}
             <form onSubmit={handleSubmit} className="w-full">
               <div className="flex flex-col sm:flex-row gap-3 items-stretch mb-5">
+                {/* First name input */}
+                <input
+                  type="text"
+                  placeholder="Votre prénom"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                  className="flex-1 rounded-xl border-2 border-white/30 bg-white/20 backdrop-blur-md px-5 py-3.5 text-base font-medium text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all"
+                  style={{
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                  }}
+                  disabled={isSubmitting}
+                />
                 {/* Email input - large format */}
                 <input
                   type="email"

@@ -7,7 +7,7 @@ const faqItems = [
   {
     id: 'how-it-works',
     question: 'Comment ça fonctionne concrètement ?',
-    shortAnswer: 'Votre enfant pose une question ou scanne un exercice. Buma guide avec des indices, explique le chemin (pas la réponse), et s\'adapte à son niveau.',
+    shortAnswer: 'Buma guide votre enfant avec la méthode socratique : il pose des questions pour faire réfléchir, adapte les explications à son profil, et combine pédagogie, social et motivation pour un apprentissage engageant.',
     detailedAnswer: 'Votre enfant peut poser une question à voix haute ou scanner un exercice. Buma ne donne jamais la réponse directement.\n\n• Il pose des questions pour faire réfléchir et propose des indices adaptés au niveau\n• Il explique le raisonnement étape par étape\n• Au fil de l\'utilisation, Buma comprend le profil de votre enfant : sa façon d\'apprendre, ses points forts, ses blocages\n• Cette connaissance approfondie permet une personnalisation toujours plus fine\n\nL\'application combine aussi le social (groupes de révision, défis entre amis) et le motivationnel (gamification, badges, progression) pour transformer l\'apprentissage en expérience engageante. C\'est la méthode socratique enrichie d\'une compréhension profonde de votre enfant et d\'une motivation adaptée.',
   },
   {
@@ -75,10 +75,10 @@ function FAQ() {
 
   return (
     <section id="faq" className="section-transition white-section-bg py-16 bg-white relative">
-      {/* Moderate orange shadow background */}
+      {/* Subtle gray shadow background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/6 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-primary-500/6 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gray-500/6 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gray-500/6 rounded-full blur-3xl" />
       </div>
       
       {/* Grid pattern */}

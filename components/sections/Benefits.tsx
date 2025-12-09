@@ -10,13 +10,13 @@ const iconMap = {
   smile: Smile,
 };
 
-function Benefits() {
+export default function Benefits() {
   return (
-    <section id="benefits" className="section-transition white-section-bg py-16 bg-gradient-to-br from-primary-50 via-white to-primary-50 relative">
-      {/* Moderate orange shadow background */}
+    <section id="benefits" className="section-transition white-section-bg py-20 bg-white relative">
+      {/* Subtle green shadow background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/6 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-primary-500/6 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-green-500/8 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-blue-500/8 rounded-full blur-3xl" />
       </div>
       
       {/* Grid pattern */}
@@ -41,44 +41,57 @@ function Benefits() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="flex flex-col sm:flex-row gap-4 max-w-5xl mx-auto">
           {BENEFITS.map((benefit, index) => {
             const Icon = iconMap[benefit.icon as keyof typeof iconMap] || UserCheck;
+            // Varied colors: Orange professionnel (primary), Blue, Green
+            const iconColors = [
+              { color: '#D04A1B', gradient: ['#D04A1B', '#B83A0F'] }, // Orange professionnel - primary
+              { color: '#2563EB', gradient: ['#2563EB', '#1D4ED8'] }, // Bleu professionnel
+              { color: '#059669', gradient: ['#059669', '#047857'] }, // Vert professionnel
+            ];
+            const iconColor = iconColors[index % iconColors.length];
             return (
               <motion.div
                 key={benefit.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                whileHover={{ y: -6 }}
+                className="flex-1"
               >
                 <div 
-                  className="neumorphism-card rounded-2xl p-6 lg:p-8 transition-all duration-300 h-full text-center group"
+                  className="bg-white rounded-xl p-6 text-center transition-all duration-300 group border-2 border-transparent"
+                  style={{
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
+                    borderColor: index === 0 ? 'transparent' : 'transparent', // Orange border only for first
+                  }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-4px)';
-                    e.currentTarget.style.boxShadow = 
-                      '12px 12px 24px rgba(0, 0, 0, 0.15), -8px -8px 16px rgba(255, 255, 255, 0.8), 0 0 0 1px rgba(255, 107, 53, 0.08)';
+                    e.currentTarget.style.boxShadow = `0 8px 16px ${iconColor.color}20`;
+                    if (index === 0) {
+                      e.currentTarget.style.borderColor = '#D04A1B'; // Orange professionnel
+                    }
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = 
-                      '8px 8px 16px rgba(0, 0, 0, 0.12), -8px -8px 16px rgba(255, 255, 255, 0.8), 0 1px 2px rgba(0, 0, 0, 0.05)';
+                    e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.06)';
+                    e.currentTarget.style.borderColor = 'transparent';
                   }}
                 >
                   <div 
-                    className="w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-                    style={{
-                      background: 'linear-gradient(135deg, #FF6B35 0%, #E55A2B 100%)',
-                      boxShadow: '0 8px 16px rgba(255, 107, 53, 0.3)',
-                    }}
+                    className="flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
                   >
-                    <Icon className="w-10 h-10 text-white" strokeWidth={2.5} />
+                    <Icon 
+                      className="w-10 h-10" 
+                      style={{ color: iconColor.color }}
+                      strokeWidth={3}
+                    />
                   </div>
-                  <h3 className="text-xl lg:text-2xl font-black text-text-primary mb-3">
+                  <h3 className="text-lg font-black text-text-primary mb-2">
                     {benefit.title}
                   </h3>
-                  <p className="text-text-secondary leading-relaxed text-base">
+                  <p className="text-sm text-text-secondary leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>
@@ -90,5 +103,3 @@ function Benefits() {
     </section>
   );
 }
-
-export default Benefits;

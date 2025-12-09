@@ -9,25 +9,37 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // BumaAI Brand Colors - Full scale
+        // BumaAI Brand Colors - Professional Orange (assombri et désaturé)
         primary: {
-          50: '#FFF5F2',
-          100: '#FFE8E0',
-          200: '#FFD1C2',
-          300: '#FFB399',
-          400: '#FF8C66',
-          DEFAULT: '#FF6B35',
-          500: '#FF6B35',
-          600: '#E55A2B',
-          700: '#CC4A21',
-          800: '#B33A17',
-          900: '#992A0D',
+          50: '#F5E6E0',
+          100: '#E8D1C2',
+          200: '#D1A399',
+          300: '#B87A66',
+          400: '#E67E5A',
+          DEFAULT: '#D04A1B', // Orange professionnel principal
+          500: '#D04A1B',
+          600: '#B83A0F', // Orange foncé
+          700: '#9F2A0A',
+          800: '#861F06',
+          900: '#6D1503',
         },
-        // Semantic Colors
-        success: "#10B981",
-        error: "#EF4444",
-        warning: "#F59E0B",
-        info: "#3B82F6",
+        // Semantic Colors - Professional palette
+        success: "#059669", // Vert professionnel
+        error: "#DC2626", // Rouge assombri
+        warning: "#D97706", // Amber assombri
+        info: "#2563EB", // Bleu professionnel
+        // Additional colors
+        purple: {
+          DEFAULT: "#7C3AED",
+          400: "#8B5CF6",
+          500: "#7C3AED",
+          600: "#6D28D9",
+        },
+        pink: {
+          DEFAULT: "#DB2777",
+          400: "#EC4899",
+          500: "#DB2777",
+        },
         // Text Colors
         text: {
           primary: "#1F2937",
@@ -67,8 +79,8 @@ const config: Config = {
         '128': '32rem',
       },
       boxShadow: {
-        'primary': '0 10px 15px -3px rgba(255, 107, 53, 0.2), 0 4px 6px -2px rgba(255, 107, 53, 0.1)',
-        'primary-lg': '0 20px 25px -5px rgba(255, 107, 53, 0.2), 0 10px 10px -5px rgba(255, 107, 53, 0.1)',
+        'primary': '0 10px 15px -3px rgba(208, 74, 27, 0.2), 0 4px 6px -2px rgba(208, 74, 27, 0.1)',
+        'primary-lg': '0 20px 25px -5px rgba(208, 74, 27, 0.2), 0 10px 10px -5px rgba(208, 74, 27, 0.1)',
       },
       animation: {
         'fade-in': 'fadeIn 0.4s ease-out',

@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  /* BumaAI Colors */
-  --buma-orange: #FF6B35;
-  --buma-orange-dark: #E55A2B;
-  --buma-orange-light: #FF8C5A;
+  /* BumaAI Colors - Professional palette */
+  --buma-orange: #D04A1B;
+  --buma-orange-dark: #B83A0F;
+  --buma-orange-light: #E67E5A;
+  --buma-orange-pale: #F5E6E0;
   
   /* Semantic Colors */
   --success: #10B981;
@@ -52,11 +53,11 @@
   
   /* Orange background - Force display */
   .bg-primary-600-solid {
-    background-color: #E55A2B !important;
+    background-color: #D04A1B !important;
   }
   
   .bg-primary-gradient {
-    background: linear-gradient(135deg, #E55A2B 0%, #CC4A21 50%, #B33A17 100%) !important;
+    background: linear-gradient(135deg, #D04A1B 0%, #B83A0F 50%, #9F2A0A 100%) !important;
   }
   
   .text-green-force {
@@ -81,9 +82,41 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.2), transparent);
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(208, 74, 27, 0.15) 20%, 
+    rgba(208, 74, 27, 0.3) 50%, 
+    rgba(208, 74, 27, 0.15) 80%, 
+    transparent 100%);
   z-index: 1;
+  box-shadow: 0 1px 3px rgba(208, 74, 27, 0.1);
+}
+
+/* Enhanced section separator - visible divider */
+.section-separator {
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(0, 0, 0, 0.08) 10%, 
+    rgba(0, 0, 0, 0.15) 50%, 
+    rgba(0, 0, 0, 0.08) 90%, 
+    transparent 100%);
+  margin: 0 auto;
+  max-width: 1200px;
+  position: relative;
+}
+
+.section-separator::before {
+  content: '';
+  position: absolute;
+  top: -0.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: rgba(208, 74, 27, 0.4);
+  border-radius: 2px;
 }
 
 /* Subtle orange shadow in white sections */
@@ -99,7 +132,7 @@ html {
   left: 0;
   right: 0;
   height: 400px;
-  background: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.05) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(208, 74, 27, 0.10) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -112,8 +145,8 @@ html {
   right: 0;
   bottom: 0;
   background-image: 
-    linear-gradient(rgba(255, 107, 53, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 107, 53, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(208, 74, 27, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(208, 74, 27, 0.04) 1px, transparent 1px);
   background-size: 50px 50px;
   pointer-events: none;
   z-index: 0;
@@ -127,8 +160,8 @@ html {
   right: 0;
   bottom: 0;
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
   background-size: 50px 50px;
   pointer-events: none;
   z-index: 0;
@@ -146,9 +179,9 @@ html {
 
 .neumorphism-card-hover {
   box-shadow: 
-    12px 12px 24px rgba(255, 107, 53, 0.15),
+    12px 12px 24px rgba(208, 74, 27, 0.12),
     -8px -8px 16px rgba(255, 255, 255, 0.8),
-    0 0 0 1px rgba(255, 107, 53, 0.1);
+    0 0 0 1px rgba(208, 74, 27, 0.08);
 }
 
 /* Custom scrollbar */

@@ -7,47 +7,47 @@ const features = [
     icon: Target,
     title: 'Suivi Personnalisé',
     description: 'S\'adapte au niveau de votre enfant en temps réel',
-    color: '#FF6B35', // Orange
-    gradient: ['#FF6B35', '#E55A2B'],
+    color: '#D04A1B', // Orange professionnel
+    gradient: ['#D04A1B', '#B83A0F'],
   },
   {
     icon: BookOpen,
     title: '6 Matières du Collège',
     description: 'Maths, Français, Anglais, Sciences, Histoire-Géo, + Langues',
-    color: '#8B5CF6', // Purple
-    gradient: ['#8B5CF6', '#7C3AED'],
+    color: '#7C3AED', // Violet professionnel
+    gradient: ['#7C3AED', '#6D28D9'],
   },
   {
     icon: GraduationCap,
     title: 'Programme Officiel',
     description: '100% conforme Éducation Nationale',
-    color: '#10B981', // Green
-    gradient: ['#10B981', '#059669'],
+    color: '#059669', // Vert professionnel
+    gradient: ['#059669', '#047857'],
   },
   {
     icon: Users,
     title: 'Méthode Active',
     description: 'Votre enfant réfléchit et comprend, Buma guide',
-    color: '#3B82F6', // Blue
-    gradient: ['#3B82F6', '#2563EB'],
+    color: '#2563EB', // Bleu professionnel
+    gradient: ['#2563EB', '#1D4ED8'],
   },
 ];
 
 function Solution() {
   return (
-    <section className="section-transition white-section-bg py-16 bg-gradient-to-br from-primary-50 via-white to-primary-50 relative">
-      {/* Moderate orange shadow background */}
+    <section className="section-transition white-section-bg py-20 bg-white relative">
+      {/* Subtle blue shadow background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary-500/6 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-primary-500/6 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/8 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-green-500/8 rounded-full blur-3xl" />
       </div>
       
       {/* Grid pattern */}
       <div className="grid-pattern" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10 animate-fade-in-up">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8 animate-fade-in-up">
             <div className="inline-block mb-4">
               <span className="bg-primary-100 text-primary-700 px-4 py-1.5 rounded-full text-sm font-semibold">
                 La Solution
@@ -56,7 +56,7 @@ function Solution() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-text-primary mb-5 leading-tight flex items-center justify-center gap-2 flex-wrap">
               BumaAI : Un tuteur qui{' '}
               <span className="text-primary-600">change tout</span>
-              <CheckCircle2 className="w-6 h-6 sm:w-7 sm:h-7 text-green-600 flex-shrink-0" strokeWidth={2.5} />
+              <CheckCircle2 className="w-6 h-6 sm:w-7 sm:h-7 text-green-600 shrink-0" strokeWidth={2.5} />
             </h2>
             <p className="text-lg sm:text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto mb-3">
               Imaginez que votre enfant ait un professeur particulier disponible 24h/24 et 7j/7.
@@ -67,50 +67,45 @@ function Solution() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
+          {/* Compact 2-column list with colored borders */}
+          <div className="grid sm:grid-cols-2 gap-4 max-w-5xl mx-auto">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
                 <div
                   key={index}
-                  className="animate-scale-in-up"
+                  className="animate-fade-in-up bg-white rounded-lg p-5 flex items-start gap-4 transition-all duration-300 group"
                   style={{
-                    animationDelay: `${index * 0.15}s`,
+                    animationDelay: `${index * 0.1}s`,
                     animationFillMode: 'both',
+                    borderLeft: `3px solid ${feature.color}`,
+                    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateX(2px)';
+                    e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.08)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateX(0)';
+                    e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
                   }}
                 >
                   <div 
-                    className="neumorphism-card rounded-2xl p-6 lg:p-8 transition-all duration-300 h-full group"
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-4px)';
-                      e.currentTarget.style.boxShadow = 
-                        '12px 12px 24px rgba(0, 0, 0, 0.15), -8px -8px 16px rgba(255, 255, 255, 0.8), 0 0 0 1px rgba(0, 0, 0, 0.08)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = 
-                        '8px 8px 16px rgba(0, 0, 0, 0.12), -8px -8px 16px rgba(255, 255, 255, 0.8), 0 1px 2px rgba(0, 0, 0, 0.05)';
-                    }}
+                    className="flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300"
                   >
-                    <div className="flex items-start gap-4">
-                      <div 
-                        className="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
-                        style={{
-                          background: `linear-gradient(135deg, ${feature.gradient[0]} 0%, ${feature.gradient[1]} 100%)`,
-                          boxShadow: `0 8px 16px ${feature.color}40`,
-                        }}
-                      >
-                        <Icon className="w-8 h-8 text-white" strokeWidth={2.5} />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl lg:text-2xl font-black text-text-primary mb-3">
-                          {feature.title}
-                        </h3>
-                        <p className="text-text-secondary leading-relaxed text-base">
-                          {feature.description}
-                        </p>
-                      </div>
-                    </div>
+                    <Icon 
+                      className="w-7 h-7" 
+                      style={{ color: feature.color }}
+                      strokeWidth={3}
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-black text-text-primary mb-1 leading-tight">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-text-secondary leading-relaxed">
+                      {feature.description}
+                    </p>
                   </div>
                 </div>
               );

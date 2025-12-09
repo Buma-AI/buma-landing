@@ -62,16 +62,22 @@ function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.3 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-primary-600-solid shadow-lg'
-          : 'bg-transparent'
-      }`}
-      style={isScrolled ? {
-        backgroundColor: '#E55A2B', // primary-600 - fallback
-      } : {}}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
     >
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Solid orange background with radial gradients - only when scrolled */}
+      {isScrolled && (
+        <div 
+          className="absolute inset-0 bg-primary-600-solid shadow-lg"
+          style={{
+            backgroundColor: '#D04A1B', // Same as Hero/CTA section
+          }}
+        >
+          {/* Radial gradient overlays - same as CTA section */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.15),transparent_70%)]" />
+        </div>
+      )}
+      
+      <nav className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.button
@@ -144,16 +150,21 @@ function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className={`md:hidden border-t ${
-              isScrolled
-                ? 'bg-primary-600-solid border-primary-500/30'
-                : 'bg-white/10 backdrop-blur-md border-white/20'
-            }`}
-            style={isScrolled ? {
-              backgroundColor: '#E55A2B', // primary-600 - fallback
-            } : {}}
+            className="md:hidden border-t border-primary-500/30 relative overflow-hidden"
           >
-            <div className="container mx-auto px-4 py-4 space-y-3">
+            {/* Solid orange background with radial gradients for mobile menu */}
+            {isScrolled && (
+              <div 
+                className="absolute inset-0 bg-primary-600-solid"
+                style={{
+                  backgroundColor: '#D04A1B', // primary-600 - fallback (orange professionnel)
+                }}
+              >
+                {/* Radial gradient overlays - same as CTA section */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.15),transparent_70%)]" />
+              </div>
+            )}
+            <div className="relative z-10 container mx-auto px-4 py-4 space-y-3">
               <button
                 onClick={() => scrollToSection('how-it-works')}
                 className="block w-full text-left text-white font-medium py-2 hover:text-white/80 transition-colors"

@@ -8,39 +8,39 @@ const steps = [
     icon: FileText,
     title: 'Exercice ou Question',
     description: 'Votre enfant fait un exercice ou pose une question',
-    color: '#3B82F6', // Blue
-    gradient: ['#3B82F6', '#2563EB'],
+    color: '#2563EB', // Bleu professionnel
+    gradient: ['#2563EB', '#1D4ED8'],
   },
   {
     icon: Brain,
     title: 'Analyse et Diagnostic',
     description: 'Buma identifie les points de blocage et les lacunes',
-    color: '#8B5CF6', // Purple
-    gradient: ['#8B5CF6', '#7C3AED'],
+    color: '#7C3AED', // Violet professionnel
+    gradient: ['#7C3AED', '#6D28D9'],
   },
   {
     icon: MessageSquare,
     title: 'Guidance et Explication',
     description: 'Buma guide avec patience, pose des questions, explique le chemin (pas la réponse)',
-    color: '#FF6B35', // Orange
-    gradient: ['#FF6B35', '#E55A2B'],
+    color: '#D04A1B', // Orange professionnel
+    gradient: ['#D04A1B', '#B83A0F'],
   },
   {
     icon: TrendingUp,
     title: 'Progression et Confiance',
     description: 'Votre enfant comprend, progresse et reprend confiance',
-    color: '#10B981', // Green
-    gradient: ['#10B981', '#059669'],
+    color: '#059669', // Vert professionnel
+    gradient: ['#059669', '#047857'],
   },
 ];
 
 function HowItWorks() {
   return (
     <section id="how-it-works" className="section-transition white-section-bg py-16 bg-white relative">
-      {/* Moderate orange shadow background */}
+      {/* Subtle blue/purple shadow background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/3 w-96 h-96 bg-primary-500/6 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-primary-500/6 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-blue-500/8 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-purple-500/8 rounded-full blur-3xl" />
       </div>
       
       {/* Grid pattern */}
@@ -80,7 +80,7 @@ function HowItWorks() {
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: 'easeInOut' }}
                 style={{
-                  background: 'linear-gradient(90deg, #3B82F6, #8B5CF6, #FF6B35, #10B981)',
+                  background: 'linear-gradient(90deg, #2563EB, #7C3AED, #D04A1B, #059669)',
                 }}
               />
               
@@ -111,31 +111,32 @@ function HowItWorks() {
                         }}
                       >
                         <motion.div 
-                          className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full border-3 border-white flex items-center justify-center z-20"
-                          style={{
-                            background: `linear-gradient(135deg, ${step.gradient[0]} 0%, ${step.gradient[1]} 100%)`,
-                            boxShadow: `0 6px 12px ${step.color}40`,
-                          }}
+                          className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full border-3 border-white flex items-center justify-center z-20 bg-white"
                           initial={{ scale: 0, rotate: -180 }}
                           whileInView={{ scale: 1, rotate: 0 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.6, delay: index * 0.2 + 0.3, type: 'spring' }}
                         >
-                          <span className="text-white font-black text-lg">{index + 1}</span>
+                          <span 
+                            className="font-black text-lg"
+                            style={{ color: step.color }}
+                          >
+                            {index + 1}
+                          </span>
                         </motion.div>
                         <motion.div 
-                          className="w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-4 mt-3 relative z-10"
-                          style={{
-                            background: `linear-gradient(135deg, ${step.gradient[0]} 0%, ${step.gradient[1]} 100%)`,
-                            boxShadow: `0 10px 20px ${step.color}40`,
-                          }}
+                          className="flex items-center justify-center mx-auto mb-4 mt-3 relative z-10"
                           initial={{ scale: 0, rotate: -180 }}
                           whileInView={{ scale: 1, rotate: 0 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.6, delay: index * 0.2 + 0.4, type: 'spring' }}
                           whileHover={{ rotate: 360, scale: 1.1 }}
                         >
-                          <Icon className="w-10 h-10 text-white" strokeWidth={2.5} />
+                          <Icon 
+                            className="w-10 h-10" 
+                            style={{ color: step.color }}
+                            strokeWidth={3}
+                          />
                         </motion.div>
                         <h3 className="text-xl lg:text-2xl font-black text-text-primary mb-3 leading-tight">
                           {step.title}
@@ -162,7 +163,7 @@ function HowItWorks() {
               viewport={{ once: true }}
               transition={{ duration: 1.5, ease: 'easeInOut' }}
               style={{
-                background: 'linear-gradient(180deg, #3B82F6, #8B5CF6, #FF6B35, #10B981)',
+                background: 'linear-gradient(180deg, #2563EB, #7C3AED, #D04A1B, #059669)',
               }}
             />
             
@@ -179,17 +180,17 @@ function HowItWorks() {
                 >
                   <div className="flex flex-col items-center relative z-10">
                     <motion.div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md"
-                      style={{
-                        background: `linear-gradient(135deg, ${step.gradient[0]} 0%, ${step.gradient[1]} 100%)`,
-                        boxShadow: `0 6px 12px ${step.color}40`,
-                      }}
+                      className="flex items-center justify-center flex-shrink-0"
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: index * 0.2 + 0.3, type: 'spring' }}
                     >
-                      <Icon className="w-6 h-6 text-white" strokeWidth={2.5} />
+                      <Icon 
+                        className="w-7 h-7" 
+                        style={{ color: step.color }}
+                        strokeWidth={3}
+                      />
                     </motion.div>
                   </div>
                   <motion.div
@@ -201,9 +202,10 @@ function HowItWorks() {
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <span
-                        className="w-6 h-6 rounded-full text-white flex items-center justify-center text-xs font-bold"
+                        className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-xs font-bold border-2"
                         style={{
-                          background: `linear-gradient(135deg, ${step.gradient[0]} 0%, ${step.gradient[1]} 100%)`,
+                          color: step.color,
+                          borderColor: step.color,
                         }}
                       >
                         {index + 1}
