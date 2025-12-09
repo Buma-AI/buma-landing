@@ -8,6 +8,7 @@ import Subjects from '@/components/sections/Subjects';
 import Benefits from '@/components/sections/Benefits';
 import CTA from '@/components/sections/CTA';
 import EarlyAdopters from '@/components/sections/EarlyAdopters';
+import FAQ from '@/components/sections/FAQ';
 import Footer from '@/components/sections/Footer';
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <Pillars />
         <Subjects />
         <Benefits />
+        <FAQ />
         <CTA />
         <EarlyAdopters />
         <Footer />
