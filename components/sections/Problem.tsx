@@ -13,7 +13,7 @@ const problems = [
   },
   {
     icon: DollarSign,
-    title: 'Un professeur particulier ? 40-60€/h.',
+    title: 'Un professeur particulier ? 15-30€/h.',
     description: 'Trop cher pour un suivi régulier.',
     color: '#F59E0B', // Amber
     gradient: ['#F59E0B', '#D97706'],

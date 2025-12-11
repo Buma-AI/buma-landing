@@ -1,4 +1,4 @@
-// BumaAI Landing Page Constants
+// Buma Landing Page Constants
 
 export const SUBJECTS = [
   {
@@ -85,7 +85,7 @@ export const EARLY_ADOPTER_BENEFITS = [
   {
     id: 'priority',
     title: 'Accès Prioritaire',
-    description: 'Vous serez parmi les premiers à tester BumaAI et à donner votre avis.',
+    description: 'Vous serez parmi les premiers à tester Buma et à donner votre avis.',
     icon: 'zap',
   },
   {
@@ -97,7 +97,7 @@ export const EARLY_ADOPTER_BENEFITS = [
   {
     id: 'influence',
     title: 'Influence le Produit',
-    description: 'Votre feedback façonne BumaAI. Vous participez à son développement.',
+    description: 'Votre feedback façonne Buma. Vous participez à son développement.',
     icon: 'message-circle',
   },
 ] as const;

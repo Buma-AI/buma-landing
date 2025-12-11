@@ -36,7 +36,7 @@ export default function Benefits() {
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-text-primary mb-4 leading-tight">
-            Ce que BumaAI{' '}
+            Ce que Buma{' '}
             <span className="text-primary-600">apporte</span> à votre enfant
           </h2>
         </motion.div>

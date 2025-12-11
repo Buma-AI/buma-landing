@@ -60,7 +60,7 @@ function HowItWorks() {
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-text-primary mb-4 leading-tight">
-            Comment BumaAI{' '}
+            Comment Buma{' '}
             <span className="text-primary-600">accompagne</span> votre enfant
           </h2>
         </motion.div>

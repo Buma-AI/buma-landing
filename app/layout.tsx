@@ -9,12 +9,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "BumaAI - Le professeur particulier de votre enfant, disponible 24/7",
+  title: "Buma - Le professeur particulier de votre enfant, disponible 24/7",
   description: "Un tuteur intelligent qui s'adapte au rythme de votre enfant, disponible quand il en a besoin, pour le prix d'un abonnement de streaming.",
   keywords: ["soutien scolaire", "aide aux devoirs", "professeur particulier", "collège", "brevet", "éducation"],
-  authors: [{ name: "BumaAI" }],
+  authors: [{ name: "Buma" }],
   openGraph: {
-    title: "BumaAI - Le professeur particulier de votre enfant",
+    title: "Buma - Le professeur particulier de votre enfant",
     description: "Un tuteur intelligent qui s'adapte au rythme de votre enfant, disponible 24/7",
     type: "website",
   },

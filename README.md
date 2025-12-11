@@ -1,6 +1,6 @@
-# BumaAI Landing Page
+# Buma Landing Page
 
-Professional landing page for BumaAI - designed to acquire early adopters and communicate the value proposition to parents.
+Professional landing page for Buma - designed to acquire early adopters and communicate the value proposition to parents.
 
 **Live:** [Deployed on Vercel](https://bumaai.vercel.app)
 
@@ -102,7 +102,7 @@ All UI components are in `components/ui/` and follow a consistent design system 
 
 1. **Hero** - Main value proposition with email signup
 2. **Problem** - Parent pain points
-3. **Solution** - How BumaAI solves problems
+3. **Solution** - How Buma solves problems
 4. **How It Works** - Step-by-step explanation
 5. **Pillars** - Core value pillars
 6. **Benefits** - Benefits for children

@@ -1,4 +1,4 @@
-// BumaAI Design System Tokens
+// Buma Design System Tokens
 
 export const spacing = {
   xs: '0.5rem',    // 8px
