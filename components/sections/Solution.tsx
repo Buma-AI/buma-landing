@@ -54,7 +54,7 @@ function Solution() {
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-text-primary mb-5 leading-tight flex items-center justify-center gap-2 flex-wrap">
-              BumaAI : Un tuteur qui{' '}
+              Buma : Un tuteur qui{' '}
               <span className="text-primary-600">change tout</span>
               <CheckCircle2 className="w-6 h-6 sm:w-7 sm:h-7 text-green-600 shrink-0" strokeWidth={2.5} />
             </h2>

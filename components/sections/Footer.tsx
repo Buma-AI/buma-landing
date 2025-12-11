@@ -31,7 +31,7 @@ function Footer() {
               <div className="bg-white/20 backdrop-blur-sm p-2 rounded-xl">
                 <Rocket className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-white">BumaAI</span>
+              <span className="text-xl font-bold text-white">Buma</span>
             </div>
             <p className="text-white/80 text-sm leading-relaxed">
               Le professeur particulier de votre enfant, disponible 24/7.
@@ -66,7 +66,7 @@ function Footer() {
         </div>
 
         <div className="border-t border-white/20 pt-8 text-center">
-          <p className="text-white/70 text-sm">© 2025 BumaAI - Tous droits réservés</p>
+          <p className="text-white/70 text-sm">© 2025 Buma - Tous droits réservés</p>
         </div>
       </div>
     </footer>

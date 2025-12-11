@@ -91,7 +91,7 @@ function Hero() {
               <div className="relative rounded-2xl overflow-hidden w-full flex justify-center">
                 <Image
                   src="/landing.png"
-                  alt="BumaAI App Interface - Profil, Chat et Social"
+                  alt="Buma App Interface - Profil, Chat et Social"
                   width={800}
                   height={1600}
                   className="rounded-2xl"

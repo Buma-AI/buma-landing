@@ -14,7 +14,7 @@ const faqItems = [
     id: 'data',
     question: 'Que faites-vous des données de mon enfant ?',
     shortAnswer: 'Elles servent uniquement à sa progression. Rien ne sort de l\'application.',
-    detailedAnswer: 'Nous sommes strictement conformes au RGPD et à la protection des données des mineurs. Les données d\'apprentissage sont utilisées exclusivement pour personnaliser les exercices et adapter le niveau en temps réel. Nous ne revendons jamais aucune donnée à des tiers. BumaAI est un sanctuaire d\'apprentissage : les données de votre enfant restent dans l\'application.',
+    detailedAnswer: 'Nous sommes strictement conformes au RGPD et à la protection des données des mineurs. Les données d\'apprentissage sont utilisées exclusivement pour personnaliser les exercices et adapter le niveau en temps réel. Nous ne revendons jamais aucune donnée à des tiers. Buma est un sanctuaire d\'apprentissage : les données de votre enfant restent dans l\'application.',
   },
   {
     id: 'ads',
@@ -26,17 +26,17 @@ const faqItems = [
     id: 'program',
     question: 'Est-ce que c\'est conforme au programme de l\'Éducation Nationale ?',
     shortAnswer: 'Oui, à 100%. De la 6ème à la 3ème, programme officiel.',
-    detailedAnswer: 'Nous suivons le Bulletin Officiel scrupuleusement, chapitre par chapitre. BumaAI prépare aux contrôles en classe et au Brevet avec les mêmes attendus que les professeurs. Chaque exercice est aligné sur les programmes officiels de l\'Éducation Nationale.',
+    detailedAnswer: 'Nous suivons le Bulletin Officiel scrupuleusement, chapitre par chapitre. Buma prépare aux contrôles en classe et au Brevet avec les mêmes attendus que les professeurs. Chaque exercice est aligné sur les programmes officiels de l\'Éducation Nationale.',
   },
   {
     id: 'chatgpt',
     question: 'Est-ce que c\'est juste ChatGPT déguisé ?',
-    shortAnswer: 'Non. ChatGPT est un outil passif, BumaAI est un coach actif qui guide.',
-    detailedAnswer: 'BumaAI a une intelligence pédagogique intégrée dès le départ. L\'élève n\'a pas besoin de savoir guider l\'IA, c\'est l\'IA qui guide l\'élève avec la méthode socratique. C\'est la différence : ChatGPT est une encyclopédie, BumaAI est un professeur particulier qui s\'adapte à votre rythme.',
+    shortAnswer: 'Non. ChatGPT est un outil passif, Buma est un coach actif qui guide.',
+    detailedAnswer: 'Buma a une intelligence pédagogique intégrée dès le départ. L\'élève n\'a pas besoin de savoir guider l\'IA, c\'est l\'IA qui guide l\'élève avec la méthode socratique. C\'est la différence : ChatGPT est une encyclopédie, Buma est un professeur particulier qui s\'adapte au rythme de l\'élève.',
   },
   {
     id: 'personalization',
-    question: 'Comment BumaAI s\'adapte au niveau de mon enfant ?',
+    question: 'Comment Buma s\'adapte au niveau de mon enfant ?',
     shortAnswer: 'En temps réel. Buma analyse chaque réponse, détecte les lacunes et ajuste immédiatement la difficulté et les explications.',
     detailedAnswer: 'Dès les premiers exercices, Buma cartographie les forces et faiblesses de votre enfant.\n\n• Si il bloque sur une notion, Buma propose automatiquement un exercice plus simple pour consolider les bases\n• Si il réussit facilement, la difficulté augmente\n• Cette adaptation se fait en temps réel, à chaque interaction\n\nContrairement à un cours en groupe où tout le monde suit le même rythme, Buma crée un parcours 100% personnalisé qui évolue avec votre enfant.',
   },
@@ -44,7 +44,7 @@ const faqItems = [
     id: 'price',
     question: 'Pourquoi payer alors qu\'il y a des sites gratuits (Khan Academy, YouTube) ?',
     shortAnswer: 'La gratuité n\'offre pas le sur-mesure et la personnalisation en temps réel.',
-    detailedAnswer: 'Sur YouTube ou Khan Academy, tout le monde regarde la même vidéo, peu importe son niveau. Sur BumaAI, chaque exercice est généré spécifiquement pour le niveau de votre enfant, chaque explication s\'adapte à sa façon de comprendre. C\'est la différence entre un cours magistral (gratuit mais générique) et un cours particulier (personnalisé et efficace).',
+    detailedAnswer: 'Sur YouTube ou Khan Academy, tout le monde regarde la même vidéo, peu importe son niveau. Sur Buma, chaque exercice est généré spécifiquement pour le niveau de votre enfant, chaque explication s\'adapte à sa façon de comprendre. C\'est la différence entre un cours magistral (gratuit mais générique) et un cours particulier (personnalisé et efficace).',
   },
   {
     id: 'cancel',
@@ -55,8 +55,8 @@ const faqItems = [
   {
     id: 'screen',
     question: 'Mon enfant passe déjà trop de temps sur son téléphone. Pourquoi lui en rajouter ?',
-    shortAnswer: 'BumaAI transforme le temps d\'écran "passif" (TikTok, jeux) en temps "actif" et intelligent.',
-    detailedAnswer: 'BumaAI est conçu pour des sessions courtes et intenses (15-20 min), pas pour des heures de scroll. C\'est un écran qui rend intelligent et fait progresser, pas un écran qui distrait. L\'application intègre des pauses obligatoires pour éviter la surcharge. Vous transformez 20 minutes de TikTok en 20 minutes d\'apprentissage efficace.',
+    shortAnswer: 'Buma transforme le temps d\'écran "passif" (TikTok, jeux) en temps "actif" et intelligent.',
+    detailedAnswer: 'Buma est conçu pour des sessions courtes et intenses (15-20 min), pas pour des heures de scroll. C\'est un écran qui rend intelligent et fait progresser, pas un écran qui distrait. L\'application intègre des pauses obligatoires pour éviter la surcharge. Vous transformez 20 minutes de TikTok en 20 minutes d\'apprentissage efficace.',
   },
 ];
 

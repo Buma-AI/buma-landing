@@ -49,7 +49,7 @@ function Header() {
               <div className="bg-gradient-to-br from-primary-500 to-primary-600 p-2.5 rounded-xl">
                 <Rocket className="w-6 h-6 text-white" />
               </div>
-              <span className="font-bold text-xl text-white">BumaAI</span>
+              <span className="font-bold text-xl text-white">Buma</span>
             </div>
           </div>
         </nav>
@@ -93,7 +93,7 @@ function Header() {
               </div>
             </div>
             <span className="font-bold text-xl text-white transition-colors">
-              BumaAI
+              Buma
             </span>
           </motion.button>
 

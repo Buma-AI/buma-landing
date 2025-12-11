@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // BumaAI Brand Colors - Professional Orange (assombri et désaturé)
+        // Buma Brand Colors - Professional Orange (assombri et désaturé)
         primary: {
           50: '#F5E6E0',
           100: '#E8D1C2',
